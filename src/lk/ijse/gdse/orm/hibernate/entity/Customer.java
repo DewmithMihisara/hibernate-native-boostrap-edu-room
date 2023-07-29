@@ -28,7 +28,6 @@ public class Customer {
                 ", salary=" + salary +
                 '}';
     }
-
     public Customer(int id, String name, String address, double salary) {
         this.id = id;
         this.name = name;
