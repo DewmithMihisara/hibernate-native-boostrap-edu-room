@@ -33,6 +33,12 @@ public class Appinitializer {
         transaction1.commit();
         session1.close();
      */
-
+        //4.Delete
+        Session deleteSession=SessionFactoryConfig.getInstance().getSession();
+        Transaction deleteTransaction =deleteSession.beginTransaction();
+        Customer deleteCustomer=deleteSession.get(Customer.class, 1);
+        deleteSession.delete(deleteCustomer);
+        deleteTransaction.commit();
+        deleteSession.close();
     }
 }
