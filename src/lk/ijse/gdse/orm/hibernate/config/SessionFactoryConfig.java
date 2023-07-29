@@ -19,5 +19,6 @@ public class SessionFactoryConfig {
         Metadata metadata= new MetadataSources(serviceRegistry).getMetadataBuilder().applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE).build();
         SessionFactory sessionFactory=metadata.buildSessionFactory();
 
+        return sessionFactory.openSession();
     }
 }
