@@ -5,5 +5,6 @@
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/hibernate_orm_boostrapping</property>
   </session-factory>
 </hibernate-configuration>
