@@ -40,5 +40,6 @@ public class Appinitializer {
         deleteSession.delete(deleteCustomer);
         deleteTransaction.commit();
         deleteSession.close();
+        //sample
     }
 }
