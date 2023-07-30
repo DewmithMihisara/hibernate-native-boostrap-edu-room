@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "customer")
 public class Customer {
+    //id annotation
     @Id
     @Column(name = "customer_Id")
     private int id;
