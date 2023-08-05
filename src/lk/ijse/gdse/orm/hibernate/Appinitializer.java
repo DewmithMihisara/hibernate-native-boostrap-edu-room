@@ -33,10 +33,17 @@ public class Appinitializer {
 //        CustomrtRipository customrtRipository=new CustomrtRipository();
 //        customer.setAddress("bbb");
 //        customer.setName("chamal");
-//        customrtRipository.updateCustomer(customer);
+//        boolean isUpdate=customrtRipository.updateCustomer(customer);
+//        if (isUpdate){
+//            System.out.println("yes");
+//        }
 
         // delete
-
+        CustomrtRipository customrtRipository=new CustomrtRipository();
+        boolean isDelete=customrtRipository.deleteCustomer(customer);
+        if (isDelete){
+            System.out.println("yes");
+        }
 
         //1.save
 //        Session session=SessionFactoryConfig.getInstance().getSession();
