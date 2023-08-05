@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="lombok-1.18.26">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/orm/hibernate/lib/lombok-1.18.26.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
