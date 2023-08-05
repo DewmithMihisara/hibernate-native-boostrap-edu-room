@@ -7,18 +7,20 @@ import org.hibernate.Transaction;
 
 public class Appinitializer {
     public static void main(String[] args) {
-        Customer customer=new Customer(001,"dew","galle",200.00);
-
+        Customer customer=new Customer();
+        customer.setName("aa");
+        customer.setId(1);
+        customer.setAddress("wedfw");
         //1.save
 
 
-    /*    Session session=SessionFactoryConfig.getInstance().getSession();
+        Session session=SessionFactoryConfig.getInstance().getSession();
         Transaction transaction=session.beginTransaction();
         session.save(customer);
         transaction.commit();
         session.close();
 
-     */
+
 
         //2.get & update
 

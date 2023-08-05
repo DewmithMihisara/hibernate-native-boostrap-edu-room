@@ -2,7 +2,7 @@
 hibernate native boostrapping project
 
 ***
-</h5>
+
 <div align="center">
   
 ![repo size](https://img.shields.io/github/repo-size/DewmithMihisara/hibernate-native-boostrapping?label=Repo%20Size&style=for-the-badge&labelColor=black&color=20bf6b)
