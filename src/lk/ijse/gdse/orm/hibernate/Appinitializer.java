@@ -29,6 +29,14 @@ public class Appinitializer {
 //        Customer existCus=cusRepo.getCustomer(434);
 //        System.out.println(existCus);
 
+        // update
+//        CustomrtRipository customrtRipository=new CustomrtRipository();
+//        customer.setAddress("bbb");
+//        customer.setName("chamal");
+//        customrtRipository.updateCustomer(customer);
+
+        // delete
+
 
         //1.save
 //        Session session=SessionFactoryConfig.getInstance().getSession();
