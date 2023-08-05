@@ -7,10 +7,7 @@ import org.hibernate.Transaction;
 
 public class Appinitializer {
     public static void main(String[] args) {
-        Customer customer=new Customer();
-        customer.setName("aa");
-        customer.setId(1);
-        customer.setAddress("wedfw");
+        Customer customer = getCustomer();
         //1.save
 
 
@@ -42,5 +39,13 @@ public class Appinitializer {
 //        deleteSession.delete(deleteCustomer);
 //        deleteTransaction.commit();
 //        deleteSession.close();
+    }
+
+    private static Customer getCustomer() {
+        Customer customer=new Customer();
+        customer.setName("aa");
+        customer.setId(1);
+        customer.setAddress("wedfw");
+        return customer;
     }
 }
