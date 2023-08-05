@@ -35,11 +35,18 @@ public class CustomrtRipository {
     }
     public boolean updateCustomer(Customer customer){
         Transaction transaction=session.beginTransaction();
+        try {
+            session.update(customer);
+            transaction.commit();
+            session.close();
+            return true;
+        }catch (Exception e){
+            transaction.rollback();
+            session.close();
+            e.printStackTrace();
+            return false;
+        }
 
-        session.update(customer);
-        transaction.commit();
-        session.close();
-        return true;
     }
     public boolean deleteCustomer(Customer customer){
         Transaction transaction=session.beginTransaction();
