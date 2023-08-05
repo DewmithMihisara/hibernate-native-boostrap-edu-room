@@ -10,14 +10,25 @@ public class Appinitializer {
     public static void main(String[] args) {
         Customer customer = getCustomer();
 
-        CustomrtRipository cusRepo=new CustomrtRipository();
-        // for save customer
 
+        // for save customer
+//        CustomrtRipository cusRepo=new CustomrtRipository();
 //        cusRepo.saveCustomer(customer);
 
         // for get customer
-        Customer existCus=cusRepo.getCustomer(434);
-        System.out.println(existCus);
+//        CustomrtRipository cusRepo=new CustomrtRipository();
+//        Customer existCus=cusRepo.getCustomer(434);
+//        System.out.println(existCus);
+
+        // save and get
+//        CustomrtRipository cusRepo=new CustomrtRipository();
+//        int saveCusId=cusRepo.saveCustomer(customer);
+//        System.out.println("save cus id=" + saveCusId);
+//
+//        cusRepo=new CustomrtRipository();
+//        Customer existCus=cusRepo.getCustomer(434);
+//        System.out.println(existCus);
+
 
         //1.save
 //        Session session=SessionFactoryConfig.getInstance().getSession();
@@ -51,7 +62,7 @@ public class Appinitializer {
     private static Customer getCustomer() {
         Customer customer=new Customer();
         customer.setName("aa");
-        customer.setId(200);
+        customer.setId(5555);
         customer.setAddress("wedfw");
         return customer;
     }
