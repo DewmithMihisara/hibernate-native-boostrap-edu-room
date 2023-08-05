@@ -11,7 +11,7 @@ public class CustomrtRipository {
         session= SessionFactoryConfig.getInstance().getSession();
     }
     public Customer getCustomer(int id){
-        return session.get(Customer.class,1);
+        return session.get(Customer.class,id);
     }
     public int saveCustomer(Customer customer){
         Transaction transaction=session.beginTransaction();

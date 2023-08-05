@@ -11,7 +11,13 @@ public class Appinitializer {
         Customer customer = getCustomer();
 
         CustomrtRipository cusRepo=new CustomrtRipository();
-        cusRepo.saveCustomer(customer);
+        // for save customer
+
+//        cusRepo.saveCustomer(customer);
+
+        // for get customer
+        Customer existCus=cusRepo.getCustomer(434);
+        System.out.println(existCus);
 
         //1.save
 //        Session session=SessionFactoryConfig.getInstance().getSession();
