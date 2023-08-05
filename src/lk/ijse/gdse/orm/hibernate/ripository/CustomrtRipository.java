@@ -23,13 +23,13 @@ public class CustomrtRipository {
         try {
             int cusId=(int)session.save(customer);
             transaction.commit();
-            session.close();
             return cusId;
         }catch (Exception e){
             transaction.rollback();
-            session.close();
             e.printStackTrace();
             return -1;
+        }finally {
+            session.close();
         }
 
     }
@@ -38,13 +38,13 @@ public class CustomrtRipository {
         try {
             session.update(customer);
             transaction.commit();
-            session.close();
             return true;
         }catch (Exception e){
             transaction.rollback();
-            session.close();
             e.printStackTrace();
             return false;
+        }finally {
+            session.close();
         }
 
     }
@@ -53,14 +53,13 @@ public class CustomrtRipository {
         try {
             session.delete(customer);
             transaction.commit();
-            session.close();
             return true;
         }catch (Exception e){
             transaction.rollback();
-            session.close();
             e.printStackTrace();
             return false;
+        }finally {
+            session.close();
         }
-
     }
 }
