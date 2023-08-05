@@ -8,18 +8,23 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
 
 public class SessionFactoryConfig {
     private static SessionFactoryConfig factoryConfig;
     private final SessionFactory sessionFactory;
 
     private SessionFactoryConfig(){
-        sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder()
+//        sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder()
+//                .configure()
+//                .build())
+//                .addAnnotatedClass(Customer.class)
+//                .getMetadataBuilder()
+//                .build().buildSessionFactory();
+        sessionFactory=new Configuration()
                 .configure()
-                .build())
                 .addAnnotatedClass(Customer.class)
-                .getMetadataBuilder()
-                .build().buildSessionFactory();
+                .buildSessionFactory();
     }
     public static SessionFactoryConfig getInstance(){
         return (factoryConfig == null)?factoryConfig=new SessionFactoryConfig():factoryConfig;
