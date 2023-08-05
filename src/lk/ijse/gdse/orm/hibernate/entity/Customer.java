@@ -2,10 +2,8 @@ package lk.ijse.gdse.orm.hibernate.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,6 +14,7 @@ import javax.persistence.Table;
 @Table(name = "customer")
 public class Customer {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "customer_Id")
     private int id;
     @Column(name ="cutomer_name")

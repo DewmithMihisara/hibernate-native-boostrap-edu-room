@@ -12,8 +12,10 @@ public class Appinitializer {
 
 
         // for save customer
-//        CustomrtRipository cusRepo=new CustomrtRipository();
-//        cusRepo.saveCustomer(customer);
+        CustomrtRipository cusRepo=new CustomrtRipository();
+        int cusId=cusRepo.saveCustomer(customer);
+        System.out.println("save cus id=" + cusId);
+
 
         // for get customer
 //        CustomrtRipository cusRepo=new CustomrtRipository();
@@ -39,11 +41,11 @@ public class Appinitializer {
 //        }
 
         // delete
-        CustomrtRipository customrtRipository=new CustomrtRipository();
-        boolean isDelete=customrtRipository.deleteCustomer(customer);
-        if (isDelete){
-            System.out.println("yes");
-        }
+//        CustomrtRipository customrtRipository=new CustomrtRipository();
+//        boolean isDelete=customrtRipository.deleteCustomer(customer);
+//        if (isDelete){
+//            System.out.println("yes");
+//        }
 
         //1.save
 //        Session session=SessionFactoryConfig.getInstance().getSession();
@@ -77,7 +79,7 @@ public class Appinitializer {
     private static Customer getCustomer() {
         Customer customer=new Customer();
         customer.setName("aa");
-        customer.setId(5555);
+        customer.setId(1);
         customer.setAddress("wedfw");
         return customer;
     }
