@@ -21,6 +21,7 @@ public class SessionFactoryConfig {
 //                .addAnnotatedClass(Customer.class)
 //                .getMetadataBuilder()
 //                .build().buildSessionFactory();
+
         sessionFactory=new Configuration()
                 .configure()
                 .addAnnotatedClass(Customer.class)
