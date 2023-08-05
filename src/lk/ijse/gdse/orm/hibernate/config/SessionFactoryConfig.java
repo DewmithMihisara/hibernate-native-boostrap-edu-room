@@ -14,18 +14,12 @@ public class SessionFactoryConfig {
     private final SessionFactory sessionFactory;
 
     private SessionFactoryConfig(){
-        StandardServiceRegistry serviceRegistry
-                = new StandardServiceRegistryBuilder()
+        sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder()
                 .configure()
-                .build();
-        Metadata metadata = new MetadataSources(serviceRegistry)
+                .build())
                 .addAnnotatedClass(Customer.class)
                 .getMetadataBuilder()
-//                .applyImplicitNamingStrategy(
-//                        ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
-                .build();
-        sessionFactory = metadata
-                .buildSessionFactory();
+                .build().buildSessionFactory();
     }
     public static SessionFactoryConfig getInstance(){
         return (factoryConfig == null)?factoryConfig=new SessionFactoryConfig():factoryConfig;
