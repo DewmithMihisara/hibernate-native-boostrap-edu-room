@@ -11,15 +11,26 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class SessionFactoryConfig {
     private static SessionFactoryConfig factoryConfig;
-    private SessionFactoryConfig(){}
+    private final SessionFactory sessionFactory;
+
+    private SessionFactoryConfig(){
+        StandardServiceRegistry serviceRegistry
+                = new StandardServiceRegistryBuilder()
+                .configure()
+                .build();
+        Metadata metadata = new MetadataSources(serviceRegistry)
+                .addAnnotatedClass(Customer.class)
+                .getMetadataBuilder()
+//                .applyImplicitNamingStrategy(
+//                        ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
+                .build();
+        sessionFactory = metadata
+                .buildSessionFactory();
+    }
     public static SessionFactoryConfig getInstance(){
         return (factoryConfig == null)?factoryConfig=new SessionFactoryConfig():factoryConfig;
     }
     public Session getSession(){
-        StandardServiceRegistry serviceRegistry=new StandardServiceRegistryBuilder().configure().build();
-        Metadata metadata= new MetadataSources(serviceRegistry).addAnnotatedClass(Customer.class).getMetadataBuilder().applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE).build();
-        SessionFactory sessionFactory=metadata.buildSessionFactory();
-
         return sessionFactory.openSession();
     }
 }
