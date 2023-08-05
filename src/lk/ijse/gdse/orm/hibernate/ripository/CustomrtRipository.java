@@ -15,12 +15,18 @@ public class CustomrtRipository {
     }
     public int saveCustomer(Customer customer){
         Transaction transaction=session.beginTransaction();
+        try {
+            int cusId=(int)session.save(customer);
+            transaction.commit();
+            session.close();
+            return cusId;
+        }catch (Exception e){
+            transaction.rollback();
+            session.close();
+            e.printStackTrace();
+            return -1;
+        }
 
-        int cusId=(int)session.save(customer);
-        transaction.commit();
-        session.close();
-
-        return cusId;
     }
     public boolean updateCustomer(Customer customer){
         Transaction transaction=session.beginTransaction();
