@@ -1,13 +1,8 @@
 package lk.ijse.gdse.orm.hibernate.config;
 
-import lk.ijse.gdse.orm.hibernate.entity.Customer;
+import lk.ijse.gdse.orm.hibernate.entity.Customer1;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.Metadata;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 public class SessionFactoryConfig {
@@ -23,7 +18,7 @@ public class SessionFactoryConfig {
 //                .build().buildSessionFactory();
         sessionFactory=new Configuration()
                 .configure()
-                .addAnnotatedClass(Customer.class)
+                .addAnnotatedClass(Customer1.class)
                 .buildSessionFactory();
     }
     public static SessionFactoryConfig getInstance(){

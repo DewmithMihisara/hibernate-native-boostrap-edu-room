@@ -1,7 +1,7 @@
 package lk.ijse.gdse.orm.hibernate.ripository;
 
 import lk.ijse.gdse.orm.hibernate.config.SessionFactoryConfig;
-import lk.ijse.gdse.orm.hibernate.entity.Customer;
+import lk.ijse.gdse.orm.hibernate.entity.Customer1;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -10,18 +10,18 @@ public class CustomrtRipository {
     public CustomrtRipository(){
         session= SessionFactoryConfig.getInstance().getSession();
     }
-    public Customer getCustomer(int id){
+    public Customer1 getCustomer(int id){
         try {
-            return session.get(Customer.class,id);
+            return session.get(Customer1.class,id);
         }catch (Exception e){
             e.printStackTrace();
             throw e;
         }
     }
-    public int saveCustomer(Customer customer){
+    public int saveCustomer(Customer1 customer1){
         Transaction transaction=session.beginTransaction();
         try {
-            int cusId=(int)session.save(customer);
+            int cusId=(int)session.save(customer1);
             transaction.commit();
             return cusId;
         }catch (Exception e){
@@ -33,10 +33,10 @@ public class CustomrtRipository {
         }
 
     }
-    public boolean updateCustomer(Customer customer){
+    public boolean updateCustomer(Customer1 customer1){
         Transaction transaction=session.beginTransaction();
         try {
-            session.update(customer);
+            session.update(customer1);
             transaction.commit();
             return true;
         }catch (Exception e){
@@ -48,10 +48,10 @@ public class CustomrtRipository {
         }
 
     }
-    public boolean deleteCustomer(Customer customer){
+    public boolean deleteCustomer(Customer1 customer1){
         Transaction transaction=session.beginTransaction();
         try {
-            session.delete(customer);
+            session.delete(customer1);
             transaction.commit();
             return true;
         }catch (Exception e){
