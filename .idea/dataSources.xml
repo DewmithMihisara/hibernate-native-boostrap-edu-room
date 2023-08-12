@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="hibernate_orm_boostrapping@localhost" uuid="ad666d4e-b8b1-4288-93cd-5170457e5938">
+    <data-source source="LOCAL" name="hibernate_orm_boostrapping@localhost" uuid="ab7566b1-2834-45f1-8b28-cc70b98fee77">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

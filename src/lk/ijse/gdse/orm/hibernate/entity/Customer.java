@@ -23,5 +23,7 @@ public class Customer {
     private String address;
     @Column(name = "customer_salary")
     private double salary;
+    @Column(name = "no", columnDefinition = "TinyInt")
+    private int no;
 
 }
