@@ -1,17 +1,18 @@
 package lk.ijse.gdse.orm.hibernate;
 
+import lk.ijse.gdse.orm.hibernate.config.SessionFactoryConfig;
 import lk.ijse.gdse.orm.hibernate.entity.Customer1;
 import lk.ijse.gdse.orm.hibernate.ripository.CustomrtRipository;
 
 public class Appinitializer {
     public static void main(String[] args) {
         Customer1 customer1 = getCustomer();
-
+        SessionFactoryConfig.getInstance().getSession();
 
         // for save customer
-        CustomrtRipository cusRepo=new CustomrtRipository();
-        int cusId=cusRepo.saveCustomer(customer1);
-        System.out.println("save cus id=" + cusId);
+//        CustomrtRipository cusRepo=new CustomrtRipository();
+//        int cusId=cusRepo.saveCustomer(customer1);
+//        System.out.println("save cus id=" + cusId);
 
 
         // for get customer
@@ -77,7 +78,8 @@ public class Appinitializer {
         Customer1 customer1 =new Customer1();
         customer1.setName("aa");
         customer1.setId(1);
-        customer1.setAddress("wedfw");
+        customer1.setAddress("galle");
+        customer1.setAge(20);
         return customer1;
     }
 }
